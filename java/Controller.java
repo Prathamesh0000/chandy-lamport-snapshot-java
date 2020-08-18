@@ -116,15 +116,18 @@ public class Controller {
         		
         			if(list.size() == branchList.size()) {
 						String outStr = "\n";
-						outStr += "snapshot_id: " + branchMessage.getReturnSnapshot().getLocalSnapshot().getSnapshotId() + "\n";
-        				outStr += receiveBranch + ":" + branchMessage.getReturnSnapshot().getLocalSnapshot().getBalance() +", " + "\n";
+						outStr += "----------------------------------------------------------------------------------------------------\n";
+						outStr += "Snapshot Id:\t" + branchMessage.getReturnSnapshot().getLocalSnapshot().getSnapshotId() + "\n";
+						outStr += "Snapshot at:\t" + receiveBranch + "\n";
+						outStr += "Snapshot amount at current branch:\t" + branchMessage.getReturnSnapshot().getLocalSnapshot().getBalance() + "\n";
+
+						outStr += "Communication channel Snapshot" +"\n";
         				
         				for(int j=0; j< branchList.size(); j++) {
-							// if(list.get(j) > 0 ) {
-								outStr +=branchList.get(j) + "->" + receiveBranch + ": " + list.get(j) + ", " ;
-							// }
+								outStr +=branchList.get(j) + "->" + receiveBranch + ": " + list.get(j) + "\n" ;
         				}
-        				
+						outStr += "----------------------------------------------------------------------------------------------------\n";
+
 						System.out.println(outStr);
         			}else {
         				System.out.println("Snapshot pending for snapshot:" + branchMessage.getReturnSnapshot().getLocalSnapshot().getSnapshotId() + " Branch: " + receiveBranch );
@@ -141,7 +144,7 @@ public class Controller {
 		File file = new File(fileName);
 		BufferedReader bufferedReader = null;
 		if(!file.exists()) {
-			System.out.println("Error in file name or address");
+			System.out.println("Error in file name or address " + fileName);
 			System.exit(0);
 		}
 		
