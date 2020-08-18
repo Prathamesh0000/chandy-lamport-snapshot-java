@@ -26,6 +26,6 @@ Chandy Lamport algorithm for Global Snapshot of distributed banking systems.
 
 ![Screnshot 1](screenshots/initial.png)
 
-2. Transactions in branches(left~~~~) with Global Snapshot(right):
+2. Transactions in branches(left) with Global Snapshot(right):
 
 ![Screnshot 1](screenshots/snapshot.png)
